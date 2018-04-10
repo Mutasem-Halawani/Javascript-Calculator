@@ -1,0 +1,23 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Javascript Calculator",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mutasem-Halawani/Javascript-Calculator.git"
+  },
+  "keywords": [
+    "FreeCodeCamp",
+    "Calculator"
+  ],
+  "author": "Mutasem Halawani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mutasem-Halawani/Javascript-Calculator/issues"
+  },
+  "homepage": "https://github.com/Mutasem-Halawani/Javascript-Calculator#readme"
+}

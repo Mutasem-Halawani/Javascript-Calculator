@@ -1,0 +1,46 @@
+// Variables
+$color-main: #6745A6;
+$color-online: #35CD75;
+$color-offline: #F1C40F;
+$color-body: #ECF0E7;
+$color-main-bkg: white;
+
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+.body {
+  font-family: 'Gugi', cursive;
+  background-color: $color-body;
+
+  // &__wrapper {
+  //   max-width: 860px;
+  //   margin: 0 auto;
+  // }
+}
+
+.main {
+
+}
+
+.footer {
+  text-align: center;
+  padding: 4rem 0;
+}
