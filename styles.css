@@ -18,6 +18,37 @@ button {
 .body {
   font-family: 'Gugi', cursive;
   background-color: #ECF0E7; }
+  .body__wrapper {
+    max-width: 385px;
+    margin: 0 auto;
+    margin-top: 4rem; }
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-gap: 10px 20px;
+  border: 2px solid red;
+  border-radius: 7px;
+  padding: 1rem;
+  background-color: blue; }
+  .main__btn {
+    border-radius: 10px; }
+    .main__btn:hover {
+      cursor: pointer; }
+  .main h1 {
+    grid-column: 1/-1;
+    text-align: center; }
+  .main output {
+    grid-column: 1/-1;
+    background-color: red;
+    text-align: right;
+    padding: 1em;
+    border-radius: 5px; }
+  .main .btn-0 {
+    grid-column: 1/3; }
+  .main .btn-equals {
+    grid-area: 8/5/6/4; }
 
 .footer {
   text-align: center;

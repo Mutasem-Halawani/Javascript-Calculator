@@ -4,8 +4,6 @@ $color-online: #35CD75;
 $color-offline: #F1C40F;
 $color-body: #ECF0E7;
 $color-main-bkg: white;
-
-
 * {
   box-sizing: border-box;
 }
@@ -26,18 +24,56 @@ button {
   font-family: inherit;
 }
 
+
 .body {
   font-family: 'Gugi', cursive;
   background-color: $color-body;
-
-  // &__wrapper {
-  //   max-width: 860px;
-  //   margin: 0 auto;
-  // }
+  &__wrapper {
+    max-width: 385px;
+    margin: 0 auto;
+    margin-top: 4rem;
+  }
 }
 
 .main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-gap: 10px 20px;
+  border: 2px solid red;
+  border-radius: 7px;
+  padding: 1rem;
+  background-color: blue;
 
+  &__btn {
+    border-radius: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  h1,
+  {
+    grid-column: 1/-1;
+    text-align: center;
+  }
+
+  output {
+    grid-column: 1/-1;
+    background-color: red;
+    text-align: right;
+    padding: 1em;
+    border-radius: 5px;
+  }
+
+  .btn-0 {
+    grid-column: 1/3;
+  }
+
+  .btn-equals {
+    grid-area: 8/5/6/4;
+  }
 }
 
 .footer {
