@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Mutasem-Halawani/Javascript-Calculator/issues"
   },
-  "homepage": "https://github.com/Mutasem-Halawani/Javascript-Calculator#readme"
+  "homepage": "https://github.com/Mutasem-Halawani/Javascript-Calculator#readme",
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
 }

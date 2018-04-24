@@ -2,28 +2,47 @@
 
 const $ = window.$
 
-var output = 0
+// var output = 0
 var current = 0
-var operation = [0]
-var previous = 0
+var operation = []
+// var previous = 0
+// var newEquation = true
 
 $(document).ready(function () {
   $('.btn').on('click', function (e) {
-    if ($(this).data('value') === 'AC') { // Clear Calculator
-      operation = [0]
-      $('output').html(0)
-    } else if ($(this).data('value') === 'CE') {
+    current = e.target.textContent
 
-    } else if ($(this).data('value') === 'equals') { // Calculate
-      output = operation.join('')
-      operation.length = []
-      previous = eval(output)
-      operation.push(previous)
-      $('output').html(previous)
-    } else { // Add to Calculation
-      current = $(this).text()
-      operation.push(current)
-      $('output').html(operation.join(''))
+    let btnClick = $(this).data('type')
+
+    switch (btnClick) {
+      case 'clear':
+        resetCal()
+        break
+      case 'equals':
+        $('output').html(eval(operation.join('')))
+        break
+      case 'operator':
+        calc(current)
+        break
+      case 'number':
+      default:
+        // if (!newEquation) {
+        //   // resetCal()
+        //   newEquation = false
+        // }
+        calc(current)
+        console.log(operation);
+        break
     }
   })
 })
+
+function resetCal() {
+  operation.length = 0
+  $('output').html(0)
+}
+
+function calc(param) {
+  operation.push(param)
+  $('output').html(operation.join(''))
+}

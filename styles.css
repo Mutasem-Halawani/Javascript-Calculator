@@ -45,6 +45,8 @@ button {
     text-align: right;
     padding: 1em;
     border-radius: 5px; }
+  .main .btn-AC {
+    grid-column: 1/3; }
   .main .btn-0 {
     grid-column: 1/3; }
   .main .btn-equals {
