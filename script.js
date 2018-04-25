@@ -1,4 +1,4 @@
-// 'use strict'
+'use strict'
 
 const $ = window.$
 
@@ -17,25 +17,18 @@ $(document).ready(function () {
         resetCal()
         break
       case 'equals':
-        $('output').html(eval(operation.join('')))
-        prevOperation.push(eval(operation.join('')))
-        operation.length = 0
+        getResult()
         break
       case 'operator':
         operation.push(prevOperation[0])
-        operation.push(current)
         prevOperation.length = 0
-        $('output').html(operation.join(''))
+        calc(current)
         break
       case 'number':
       default:
+        calc(current)
         if (prevOperation.length != 0) {
-          operation.push(current)
-          $('output').html(operation.join(''))
           prevOperation.length = 0
-        } else {
-          operation.push(current)
-          $('output').html(operation.join(''))
         }
         break
     }
@@ -48,7 +41,13 @@ function resetCal() {
   $('output').html(0)
 }
 
-function calc(param) {
-  operation.push(param)
+function calc(num) {
+  operation.push(num)
   $('output').html(operation.join(''))
+}
+
+function getResult() {
+  $('output').html(eval(operation.join('')))
+  prevOperation.push(eval(operation.join('')))
+  operation.length = 0
 }
