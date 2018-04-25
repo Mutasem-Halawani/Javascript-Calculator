@@ -2,11 +2,9 @@
 
 const $ = window.$
 
-// var output = 0
 var current = 0
 var operation = []
-// var previous = 0
-// var newEquation = true
+var prevOperation = []
 
 $(document).ready(function () {
   $('.btn').on('click', function (e) {
@@ -20,18 +18,25 @@ $(document).ready(function () {
         break
       case 'equals':
         $('output').html(eval(operation.join('')))
+        prevOperation.push(eval(operation.join('')))
+        operation.length = 0
         break
       case 'operator':
-        calc(current)
+        operation.push(prevOperation[0])
+        operation.push(current)
+        prevOperation.length = 0
+        $('output').html(operation.join(''))
         break
       case 'number':
       default:
-        // if (!newEquation) {
-        //   // resetCal()
-        //   newEquation = false
-        // }
-        calc(current)
-        console.log(operation);
+        if (prevOperation.length != 0) {
+          operation.push(current)
+          $('output').html(operation.join(''))
+          prevOperation.length = 0
+        } else {
+          operation.push(current)
+          $('output').html(operation.join(''))
+        }
         break
     }
   })
@@ -39,6 +44,7 @@ $(document).ready(function () {
 
 function resetCal() {
   operation.length = 0
+  prevOperation.length = 0
   $('output').html(0)
 }
 
